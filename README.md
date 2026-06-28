@@ -1,2 +1,4 @@
 # WT419-VPN
 Secure Trojan+TLS VPN tailored for IT professionals and developers. Stealth protocol designed to bypass DPI by masking traffic as standard HTTPS. Strict zero-logs policy, military-grade encryption, and low-latency connection for remote work, SSH, and seamless development workflows.
+
+* **Next-Gen Smart Cascaded Routing (Star Topology):** Moving towards a decentralized hub-and-spoke (star) network architecture driven by intelligent rule-based routing. Instead of forcing users to manually switch VPN profiles or server locations to access geo-restricted regions, they will connect to a single, lowest-latency entry node closest to them. The network core will then automatically analyze the destination traffic and dynamically tunnel it through isolated cascaded links (spokes/rays) directly to the target country (e.g., routing a US-based developer to Chinese or Iranian resources seamlessly in the background).
