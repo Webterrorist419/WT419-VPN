@@ -3,28 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">WT419 VPN — Приватность и защита данных Trojan+TLS</title>
+    <title id="pageTitle">WT419 VPN — Премиальная защита и приватность нового поколения</title>
     
     <meta property="og:site_name" content="WT419 VPN">
     <meta property="og:title" content="WT419 VPN — Надежная защита и приватность">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wt419.site">
     
     <link rel="icon" type="image/png" href="favicon.png">
 
     <meta name="description" content="WT419 VPN — Анти-DPI обход блокировок на Trojan+TLS.">
     <meta name="robots" content="index, follow">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <style>
+        /* ТЕМНАЯ ТЕМА (По умолчанию) */
         :root {
-            --bg-color: #07070c;
-            --card-bg: #10101a;
-            --card-border: #1a1a2e;
-            --neon-cyan: #00f0ff;
-            --neon-pink: #ff0055;
-            --neon-purple: #9d00ff;
-            --text-main: #e1e1e9;
-            --text-muted: #62627a;
-            --radius: 16px;
+            --bg-main: #0b0f19;         /* Глубокий полуночно-синий */
+            --bg-card: #131a2e;         /* Фон панелей */
+            --cyber-blue: #0088ff;      /* Электрический синий */
+            --cyber-red: #ff3366;       /* Неоновый красный */
+            --text-primary: #ffffff;    /* Белый текст */
+            --text-secondary: #94a3b8;  /* Серый текст */
+            --border-color: #222f4d;    /* Границы */
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --bg-glow-1: rgba(0, 136, 255, 0.15);
+            --bg-glow-2: rgba(255, 51, 102, 0.08);
+            --disclaimer-bg: rgba(255, 51, 102, 0.05);
+            --disclaimer-text: #f1f5f9;
+            --btn-sec-bg: rgba(255, 255, 255, 0.02);
+        }
+
+        /* СВЕТЛАЯ ТЕМА (Включается автоматически, если на устройстве выбрана светлая тема) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-main: #f4f6fa;         /* Благородный светло-серый */
+                --bg-card: #ffffff;         /* Чистый белый для карточки */
+                --cyber-blue: #0066ff;      /* Чуть более насыщенный синий для читаемости */
+                --cyber-red: #e11d48;       /* Насыщенный красный для светлого фона */
+                --text-primary: #0f172a;    /* Глубокий темный текст */
+                --text-secondary: #64748b;  /* Спокойный серый текст */
+                --border-color: #e2e8f0;    /* Светлые аккуратные границы */
+                --bg-glow-1: rgba(0, 102, 255, 0.06);
+                --bg-glow-2: rgba(225, 29, 72, 0.04);
+                --disclaimer-bg: rgba(225, 29, 72, 0.04);
+                --disclaimer-text: #1e293b;
+                --btn-sec-bg: rgba(15, 23, 42, 0.02);
+            }
         }
 
         *, *::before, *::after {
@@ -34,264 +63,340 @@
         }
         
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
-            /* Деликатная футуристичная сетка на фоне */
-            background-image: radial-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 0);
-            background-size: 20px 20px;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Контейнер в стиле Amnezia (минималистичный интерфейс приложения) */
-        .app-container {
+        /* Мягкие неоновые свечения на бэкграунде */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: -150px;
+            left: calc(50% - 250px);
+            background: radial-gradient(circle, var(--bg-glow-1) 0%, transparent 75%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            right: -100px;
+            background: radial-gradient(circle, var(--bg-glow-2) 0%, transparent 75%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Навигация */
+        .navbar {
             width: 100%;
-            max-width: 400px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 30px 24px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 240, 255, 0.01);
-        }
-
-        /* Шапка */
-        .header {
+            max-width: 1200px;
+            padding: 24px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 28px;
+            z-index: 10;
         }
 
-        h1 {
-            font-size: 20px;
+        .logo {
+            font-size: 22px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
-            font-family: monospace;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--text-primary) 40%, var(--cyber-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Переключатель языка */
         .lang-btn {
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--neon-cyan);
-            border: 1px solid rgba(0, 240, 255, 0.25);
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-family: monospace;
-            font-size: 12px;
-            font-weight: bold;
+            background: var(--btn-sec-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.2s ease;
-            text-transform: uppercase;
         }
         .lang-btn:hover {
-            background: rgba(0, 240, 255, 0.08);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+            border-color: var(--cyber-blue);
+            background: rgba(0, 136, 255, 0.05);
         }
 
-        /* Окно предупреждения для EN версии */
-        .warning-box {
-            display: none;
-            background: rgba(255, 0, 85, 0.05);
-            border: 1px dashed rgba(255, 0, 85, 0.3);
-            color: #ff417b;
-            padding: 14px;
-            border-radius: var(--radius);
+        /* Главный контейнер */
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            z-index: 10;
+            flex-grow: 1;
+        }
+
+        @media (min-width: 1000px) {
+            .hero-container {
+                grid-template-columns: 1.2fr 1fr;
+                align-items: center;
+                padding: 80px 20px;
+            }
+        }
+
+        /* Контентная часть */
+        .hero-info h2 {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
             margin-bottom: 24px;
-            font-size: 12px;
-            font-family: monospace;
-            line-height: 1.4;
+        }
+        @media (min-width: 600px) {
+            .hero-info h2 { font-size: 48px; }
         }
 
-        /* Карточка описания/статуса */
-        .status-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius);
-            padding: 20px;
+        .hero-info h2 span {
+            color: var(--cyber-blue);
+            background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Важный технический дисклеймер */
+        .disclaimer-box {
+            background: var(--disclaimer-bg);
+            border-left: 3px solid var(--cyber-red);
+            padding: 16px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 24px;
+        }
+        .disclaimer-box p {
+            font-size: 14px;
+            margin-bottom: 0;
+            color: var(--disclaimer-text);
+        }
+        .disclaimer-box strong {
+            color: var(--cyber-red);
+        }
+
+        /* Правая часть: Интерфейсная карточка */
+        .app-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 28px;
         }
-
-        .status-card p {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #b9b9c9;
-            margin-bottom: 12px;
-        }
-        .status-card p:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .status-card strong {
-            color: var(--neon-cyan);
-        }
-
-        /* Бейджи */
-        .badge-container {
-            margin-top: 18px;
-            display: flex;
+        
+        .status-badge {
+            display: inline-flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 8px;
+            background: rgba(0, 136, 255, 0.08);
+            border: 1px solid rgba(0, 136, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cyber-blue);
+        }
+        .status-badge::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--cyber-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cyber-blue);
         }
 
-        .protocol-badge {
-            background: rgba(0, 240, 255, 0.06);
-            border: 1px solid rgba(0, 240, 255, 0.15);
-            color: var(--neon-cyan);
-            font-family: monospace;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .sys-status {
-            font-family: monospace;
-            font-size: 11px;
-            color: var(--neon-pink);
-            letter-spacing: 0.5px;
-        }
-
-        /* Список кнопок */
+        /* Кнопки */
         .actions-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .btn-action {
+        /* Главная синяя кнопка */
+        .btn-primary {
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 14px;
+            background: linear-gradient(135deg, var(--cyber-blue), #0055ff);
+            color: #ffffff;
+            font-size: 16px;
             font-weight: 700;
+            padding: 18px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 25px rgba(0, 85, 255, 0.25);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0, 136, 255, 0.5);
+        }
+
+        /* Дополнительные кнопки с эффектом тотального красного горения */
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: var(--btn-sec-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 600;
             padding: 16px;
-            border-radius: var(--radius);
+            border-radius: var(--radius-md);
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: monospace;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        }
+        .btn-secondary:hover {
+            background: var(--cyber-red);             /* Полная плотная заливка красным */
+            border-color: var(--cyber-red);
+            color: #ffffff;                           /* Белый текст при наведении в обеих темах */
+            font-weight: 700;
+            /* Мощное многослойное неоновое горение кнопки наружу */
+            box-shadow: 
+                0 0 10px rgba(255, 51, 102, 0.4), 
+                0 0 30px rgba(255, 51, 102, 0.6), 
+                0 10px 25px rgba(255, 51, 102, 0.3);
+            transform: translateY(-3px);
         }
 
-        /* Кнопка: Попробовать VPN */
-        .btn-cyan {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
-        }
-        .btn-cyan:hover {
-            background: #fff;
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
-            transform: translateY(-1px);
-        }
-
-        /* Кнопка: Скачать Happ */
-        .btn-outline-pink {
-            background: transparent;
-            border: 1px solid rgba(255, 0, 85, 0.3);
-            color: var(--neon-pink);
-        }
-        .btn-outline-pink:hover {
-            border-color: var(--neon-pink);
-            background: rgba(255, 0, 85, 0.04);
-            box-shadow: 0 0 20px rgba(255, 0, 85, 0.15);
+        /* Системный нотис локали */
+        .warning-box {
+            display: none;
+            background: rgba(255, 51, 102, 0.06);
+            border: 1px solid rgba(255, 51, 102, 0.15);
+            color: var(--cyber-red);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin-top: 20px;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
-        /* Кнопка: Прокси */
-        .btn-outline-purple {
-            background: transparent;
-            border: 1px solid rgba(157, 0, 255, 0.3);
-            color: #b545ff;
-        }
-        .btn-outline-purple:hover {
-            border-color: var(--neon-purple);
-            background: rgba(157, 0, 255, 0.04);
-            box-shadow: 0 0 20px rgba(157, 0, 255, 0.15);
-        }
-
-        /* Подвал */
+        /* Футер */
         .footer {
-            margin-top: 28px;
-            text-align: center;
-            font-family: monospace;
-            font-size: 10px;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 32px 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-secondary);
+            z-index: 10;
+        }
+        @media (min-width: 600px) {
+            .footer { flex-direction: row; }
         }
     </style>
 </head>
 <body>
 
-<div class="app-container">
-    <div class="header">
-        <h1>WT419 // VPN</h1>
+    <nav class="navbar">
+        <div class="logo">WT419 // VPN</div>
         <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">EN</button>
-    </div>
+    </nav>
 
-    <div class="warning-box" id="warningBox">
-        [NOTICE] SYSTEM: Some interface elements of the Telegram bot are currently only available in Russian.
-    </div>
-
-    <div class="status-card">
-        <p id="descText1">
-            <strong>WT419 VPN</strong> спроектирован для обеспечения абсолютной приватности, анонимности и надежной защиты ваших данных в цифровом пространстве.
-        </p>
-        <p id="descText2">
-            Трафик полностью инкапсулируется и маскируется под стандартное HTTPS-соединение, исключая обнаружение и глубокий анализ пакетов (DPI).
-        </p>
+    <main class="hero-container">
         
-        <div class="badge-container">
-            <div class="protocol-badge">CORE: TROJAN+TLS</div>
-            <div class="sys-status">SECURE.ON</div>
+        <div class="hero-info">
+            <h2 id="heroTitle">Абсолютная свобода. <br><span>Без ограничений.</span></h2>
+            <p id="heroDesc1">
+                WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол Trojan+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).
+            </p>
+            
+            <div class="disclaimer-box">
+                <p id="heroDisclaimer">
+                    <strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы Trojan+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="actions-list">
-        <a href="https://t.me/wt419vpnbot" target="_blank" class="btn-action btn-cyan" id="btnVpn">
-            Попробовать VPN
-        </a>
-        
-        <a href="https://www.happ.su/main" target="_blank" class="btn-action btn-outline-pink" id="btnHapp">
-            Скачать Happ Utility
-        </a>
-        
-        <a href="https://t.me/socks?server=wt419.site&port=57419&user=gzdb2ol2&pass=n29b8xezf9k3" target="_blank" class="btn-action btn-outline-purple" id="btnProxy">
-            Прокси для Telegram
-        </a>
-    </div>
+        <div class="app-card">
+            <div class="card-header">
+                <span style="font-weight: 700; font-size: 15px; color: var(--text-secondary); letter-spacing: 0.5px;">TROJAN + TLS STEALTH</span>
+                <span class="status-badge">ONLINE</span>
+            </div>
 
-    <div class="footer">
-        © 2026 WT419. SECURE_MIRROR_NODE
-    </div>
-</div>
+            <div class="actions-list">
+                <a href="https://t.me/wt419vpnbot" target="_blank" class="btn-primary" id="btnVpn">
+                    Подключить VPN
+                </a>
+                <a href="https://www.happ.su/main" target="_blank" class="btn-secondary" id="btnHapp">
+                    Скачать Happ Utility
+                </a>
+                <a href="https://t.me/socks?server=wt419.site&port=57419&user=gzdb2ol2&pass=n29b8xezf9k3" target="_blank" class="btn-secondary" id="btnProxy">
+                    Настроить прокси Telegram
+                </a>
+            </div>
+
+            <div class="warning-box" id="warningBox">
+                [Notice] Telegram integration modules are currently forced to Russian language parameters.
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div>© 2026 WT419 VPN. Все права защищены.</div>
+        <div style="font-size: 13px; color: var(--text-secondary);">NEXT_GEN_SECURITY_NODE</div>
+    </footer>
 
 <script>
-    // Локализация ресурсов
     const langData = {
         ru: {
-            title: "WT419 VPN — Приватность и защита данных Trojan+TLS",
-            desc1: "<strong>WT419 VPN</strong> спроектирован для обеспечения абсолютной приватности, анонимности и надежной защиты ваших данных в цифровом пространстве.",
-            desc2: "Трафик полностью инкапсулируется и маскируется под стандартное HTTPS-соединение, исключая обнаружение и глубокий анализ пакетов (DPI).",
-            btnVpn: "Попробовать VPN",
+            title: "WT419 VPN — Премиальная защита и приватность нового поколения",
+            heroTitle: "Абсолютная свобода. <br><span>Без ограничений.</span>",
+            heroDesc1: "WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол Trojan+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).",
+            heroDisclaimer: "<strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы Trojan+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.",
+            btnVpn: "Подключить VPN",
             btnHapp: "Скачать Happ Utility",
-            btnProxy: "Прокси для Telegram",
+            btnProxy: "Настроить прокси Telegram",
             langBtn: "EN"
         },
         en: {
-            title: "WT419 VPN — Privacy & Data Protection Trojan+TLS",
-            desc1: "<strong>WT419 VPN</strong> is engineered to ensure absolute privacy, anonymity, and robust protection of your data across the digital frontier.",
-            desc2: "Your traffic is fully encapsulated and obfuscated as standard HTTPS, preventing detection and Deep Packet Inspection (DPI).",
-            btnVpn: "Try VPN",
+            title: "WT419 VPN — Premium Next-Gen Privacy & Protection",
+            heroTitle: "Absolute Freedom. <br><span>No Limitations.</span>",
+            heroDesc1: "WT419 VPN is engineered to deliver flawless anonymity and robust encryption. Our elite Trojan+TLS protocol encapsulates and obfuscates data streams as standard web traffic, rendering it invisible to Deep Packet Inspection (DPI) blocks.",
+            heroDisclaimer: "<strong>Technical Notice:</strong> Although Trojan+TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
+            btnVpn: "Connect VPN",
             btnHapp: "Download Happ Utility",
-            btnProxy: "Proxy for Telegram",
+            btnProxy: "Configure Telegram Proxy",
             langBtn: "RU"
         }
     };
@@ -299,7 +404,6 @@
     let currentLang = 'ru';
 
     function toggleLanguage() {
-        // Переключаем флаг языка и управляем видимостью плашки предупреждения
         if (currentLang === 'ru') {
             currentLang = 'en';
             document.getElementById('warningBox').style.display = 'block';
@@ -308,10 +412,10 @@
             document.getElementById('warningBox').style.display = 'none';
         }
 
-        // Синхронизируем тексты на странице
-        document.getElementById('pageTitle').innerText = langData[currentLang].title;
-        document.getElementById('descText1').innerHTML = langData[currentLang].desc1;
-        document.getElementById('descText2').innerHTML = langData[currentLang].desc2;
+        document.title = langData[currentLang].title;
+        document.getElementById('heroTitle').innerHTML = langData[currentLang].heroTitle;
+        document.getElementById('heroDesc1').innerText = langData[currentLang].heroDesc1;
+        document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
         document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
         document.getElementById('btnHapp').innerText = langData[currentLang].btnHapp;
         document.getElementById('btnProxy').innerText = langData[currentLang].btnProxy;
