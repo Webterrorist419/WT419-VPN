@@ -8,11 +8,11 @@
     <meta property="og:site_name" content="WT419 VPN">
     <meta property="og:title" content="WT419 VPN — Надежная защита и приватность">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wt419.site">
+    <meta property="og:url" content="https://www.wt419.site">
     
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/wt419vpn.png">
 
-    <meta name="description" content="WT419 VPN — Анти-DPI обход блокировок на Trojan+TLS.">
+    <meta name="description" content="WT419 VPN — Анти-DPI обход блокировок на VLESS+TLS.">
     <meta name="robots" content="index, follow">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,16 +38,16 @@
             --btn-sec-bg: rgba(255, 255, 255, 0.02);
         }
 
-        /* СВЕТЛАЯ ТЕМА (Включается автоматически, если на устройстве выбрана светлая тема) */
+        /* СВЕТЛАЯ ТЕМА */
         @media (prefers-color-scheme: light) {
             :root {
-                --bg-main: #f4f6fa;         /* Благородный светло-серый */
-                --bg-card: #ffffff;         /* Чистый белый для карточки */
-                --cyber-blue: #0066ff;      /* Чуть более насыщенный синий для читаемости */
-                --cyber-red: #e11d48;       /* Насыщенный красный для светлого фона */
-                --text-primary: #0f172a;    /* Глубокий темный текст */
-                --text-secondary: #64748b;  /* Спокойный серый текст */
-                --border-color: #e2e8f0;    /* Светлые аккуратные границы */
+                --bg-main: #f4f6fa;
+                --bg-card: #ffffff;
+                --cyber-blue: #0066ff;
+                --cyber-red: #e11d48;
+                --text-primary: #0f172a;
+                --text-secondary: #64748b;
+                --border-color: #e2e8f0;
                 --bg-glow-1: rgba(0, 102, 255, 0.06);
                 --bg-glow-2: rgba(225, 29, 72, 0.04);
                 --disclaimer-bg: rgba(225, 29, 72, 0.04);
@@ -75,7 +75,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Мягкие неоновые свечения на бэкграунде */
         body::before {
             content: "";
             position: absolute;
@@ -99,7 +98,6 @@
             pointer-events: none;
         }
 
-        /* Навигация */
         .navbar {
             width: 100%;
             max-width: 1200px;
@@ -136,7 +134,6 @@
             background: rgba(0, 136, 255, 0.05);
         }
 
-        /* Главный контейнер */
         .hero-container {
             width: 100%;
             max-width: 1200px;
@@ -156,7 +153,6 @@
             }
         }
 
-        /* Контентная часть */
         .hero-info h2 {
             font-size: 38px;
             font-weight: 800;
@@ -182,7 +178,6 @@
             margin-bottom: 16px;
         }
 
-        /* Важный технический дисклеймер */
         .disclaimer-box {
             background: var(--disclaimer-bg);
             border-left: 3px solid var(--cyber-red);
@@ -199,7 +194,6 @@
             color: var(--cyber-red);
         }
 
-        /* Правая часть: Интерфейсная карточка */
         .app-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -237,14 +231,12 @@
             box-shadow: 0 0 10px var(--cyber-blue);
         }
 
-        /* Кнопки */
         .actions-list {
             display: flex;
             flex-direction: column;
             gap: 14px;
         }
 
-        /* Главная синяя кнопка */
         .btn-primary {
             display: flex;
             align-items: center;
@@ -264,7 +256,6 @@
             box-shadow: 0 14px 30px rgba(0, 136, 255, 0.5);
         }
 
-        /* Дополнительные кнопки с эффектом тотального красного горения */
         .btn-secondary {
             display: flex;
             align-items: center;
@@ -280,11 +271,10 @@
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-secondary:hover {
-            background: var(--cyber-red);             /* Полная плотная заливка красным */
+            background: var(--cyber-red);
             border-color: var(--cyber-red);
-            color: #ffffff;                           /* Белый текст при наведении в обеих темах */
+            color: #ffffff;
             font-weight: 700;
-            /* Мощное многослойное неоновое горение кнопки наружу */
             box-shadow: 
                 0 0 10px rgba(255, 51, 102, 0.4), 
                 0 0 30px rgba(255, 51, 102, 0.6), 
@@ -292,7 +282,6 @@
             transform: translateY(-3px);
         }
 
-        /* Системный нотис локали */
         .warning-box {
             display: none;
             background: rgba(255, 51, 102, 0.06);
@@ -305,7 +294,6 @@
             line-height: 1.4;
         }
 
-        /* Футер */
         .footer {
             width: 100%;
             max-width: 1200px;
@@ -337,31 +325,28 @@
         <div class="hero-info">
             <h2 id="heroTitle">Абсолютная свобода. <br><span>Без ограничений.</span></h2>
             <p id="heroDesc1">
-                WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол Trojan+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).
+                WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол VLESS+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).
             </p>
             
             <div class="disclaimer-box">
                 <p id="heroDisclaimer">
-                    <strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы Trojan+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.
+                    <strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы VLESS+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.
                 </p>
             </div>
         </div>
 
         <div class="app-card">
             <div class="card-header">
-                <span style="font-weight: 700; font-size: 15px; color: var(--text-secondary); letter-spacing: 0.5px;">TROJAN + TLS STEALTH</span>
+                <span style="font-weight: 700; font-size: 15px; color: var(--text-secondary); letter-spacing: 0.5px;">VLESS + TLS STEALTH</span>
                 <span class="status-badge">ONLINE</span>
             </div>
 
             <div class="actions-list">
-                <a href="https://t.me/wt419vpnbot" target="_blank" class="btn-primary" id="btnVpn">
+                <a href="https://t.me/wt419vpnrubot" target="_blank" class="btn-primary" id="btnVpn">
                     Подключить VPN
                 </a>
                 <a href="https://www.happ.su/main" target="_blank" class="btn-secondary" id="btnHapp">
                     Скачать Happ Utility
-                </a>
-                <a href="https://t.me/socks?server=wt419.site&port=57419&user=gzdb2ol2&pass=n29b8xezf9k3" target="_blank" class="btn-secondary" id="btnProxy">
-                    Настроить прокси Telegram
                 </a>
             </div>
 
@@ -373,7 +358,7 @@
     </main>
 
     <footer class="footer">
-        <div>© 2026 WT419 VPN. Все права защищены.</div>
+        <div id="footerCopyright">© 2026 WT419 VPN. Все права защищены.</div>
         <div style="font-size: 13px; color: var(--text-secondary);">NEXT_GEN_SECURITY_NODE</div>
     </footer>
 
@@ -382,22 +367,22 @@
         ru: {
             title: "WT419 VPN — Премиальная защита и приватность нового поколения",
             heroTitle: "Абсолютная свобода. <br><span>Без ограничений.</span>",
-            heroDesc1: "WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол Trojan+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).",
-            heroDisclaimer: "<strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы Trojan+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.",
+            heroDesc1: "WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Наш передовой протокол VLESS+TLS полностью инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).",
+            heroDisclaimer: "<strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы VLESS+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.",
             btnVpn: "Подключить VPN",
             btnHapp: "Скачать Happ Utility",
-            btnProxy: "Настроить прокси Telegram",
-            langBtn: "EN"
+            langBtn: "EN",
+            copyright: "© 2026 WT419 VPN. Все права защищены."
         },
         en: {
             title: "WT419 VPN — Premium Next-Gen Privacy & Protection",
             heroTitle: "Absolute Freedom. <br><span>No Limitations.</span>",
-            heroDesc1: "WT419 VPN is engineered to deliver flawless anonymity and robust encryption. Our elite Trojan+TLS protocol encapsulates and obfuscates data streams as standard web traffic, rendering it invisible to Deep Packet Inspection (DPI) blocks.",
-            heroDisclaimer: "<strong>Technical Notice:</strong> Although Trojan+TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
+            heroDesc1: "WT419 VPN is engineered to deliver flawless anonymity and robust encryption. Our elite VLESS+TLS protocol encapsulates and obfuscates data streams as standard web traffic, rendering it invisible to Deep Packet Inspection (DPI) blocks.",
+            heroDisclaimer: "<strong>Technical Notice:</strong> Although VLESS+TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
             btnVpn: "Connect VPN",
             btnHapp: "Download Happ Utility",
-            btnProxy: "Configure Telegram Proxy",
-            langBtn: "RU"
+            langBtn: "RU",
+            copyright: "© 2026 WT419 VPN. All rights reserved."
         }
     };
 
@@ -418,8 +403,8 @@
         document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
         document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
         document.getElementById('btnHapp').innerText = langData[currentLang].btnHapp;
-        document.getElementById('btnProxy').innerText = langData[currentLang].btnProxy;
         document.getElementById('langBtn').innerText = langData[currentLang].langBtn;
+        document.getElementById('footerCopyright').innerText = langData[currentLang].copyright;
     }
 </script>
 
