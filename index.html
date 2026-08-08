@@ -369,7 +369,7 @@
                 </a>
 
                 <div class="download-group">
-                    <div class="group-label">Скачать Happ</div>
+                    <div class="group-label" id="groupHapp">Скачать Happ</div>
                     <div class="store-buttons">
                         <a href="https://apps.apple.com/us/app/happ-proxy-utility/id6504287215?l" target="_blank" class="btn-secondary" id="btnHappAppStore">
                             App Store
@@ -384,7 +384,7 @@
                 </div>
 
                 <div class="download-group">
-                    <div class="group-label">Скачать Incy</div>
+                    <div class="group-label" id="groupIncy">Скачать Incy</div>
                     <div class="store-buttons">
                         <a href="https://apps.apple.com/ru/app/incy/id6756943388" target="_blank" class="btn-secondary" id="btnIncyAppStore">
                             App Store
@@ -422,14 +422,16 @@
             btnIncyAppStore: "App Store",
             btnIncyGooglePlay: "Google Play",
             btnIncyGitHub: "GitHub",
+            groupHapp: "Скачать Happ",
+            groupIncy: "Скачать Incy",
             langBtn: "EN",
             copyright: "© 2026 WT419 VPN. Все права защищены."
         },
         en: {
             title: "WT419 VPN",
-            heroTitle: "Absolute Freedom. <br><span>No Limitations.</span>",
-            heroDesc1: "WT419 VPN is engineered to deliver strong privacy and reliable data protection. We use the modern VLESS+TLS protocol to encapsulate and obfuscate data streams as standard web traffic, helping keep them invisible to Deep Packet Inspection (DPI) blocks.",
-            heroDisclaimer: "<strong>Technical Notice:</strong> Although VLESS-TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
+            heroTitle: "Absolute Freedom. <br><span>No Limits.</span>",
+            heroDesc1: "WT419 VPN is designed to provide complete privacy and reliable data protection. We use the modern VLESS+TLS protocol to encapsulate and disguise traffic as regular web traffic, making it invisible to deep packet inspection (DPI) systems.",
+            heroDisclaimer: "<strong>Important technical note:</strong> Although VLESS+TLS effectively bypasses DPI filters through HTTPS camouflage, the connection <strong>will not work</strong> if your internet provider enforces strict allow-list blocking. The VPN uses its own dedicated domain, which is not included in such allow-lists by default.",
             btnVpn: "Connect VPN",
             btnHappAppStore: "App Store",
             btnHappGooglePlay: "Google Play",
@@ -437,6 +439,8 @@
             btnIncyAppStore: "App Store",
             btnIncyGooglePlay: "Google Play",
             btnIncyGitHub: "GitHub",
+            groupHapp: "Download Happ",
+            groupIncy: "Download Incy",
             langBtn: "RU",
             copyright: "© 2026 WT419 VPN. All rights reserved."
         }
@@ -456,6 +460,8 @@
         document.getElementById('heroDesc1').innerText = langData[currentLang].heroDesc1;
         document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
         document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
+        document.getElementById('groupHapp').innerText = langData[currentLang].groupHapp;
+        document.getElementById('groupIncy').innerText = langData[currentLang].groupIncy;
         document.getElementById('btnHappAppStore').innerText = langData[currentLang].btnHappAppStore;
         document.getElementById('btnHappGooglePlay').innerText = langData[currentLang].btnHappGooglePlay;
         document.getElementById('btnHappGitHub').innerText = langData[currentLang].btnHappGitHub;
