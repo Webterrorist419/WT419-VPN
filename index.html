@@ -235,7 +235,28 @@
         .actions-list {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 18px;
+        }
+
+        .download-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .group-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding-left: 4px;
+        }
+
+        .store-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
         }
 
         .btn-primary {
@@ -346,9 +367,36 @@
                 <a href="https://t.me/wt419vpnrubot" target="_blank" class="btn-primary" id="btnVpn">
                     Подключить VPN
                 </a>
-                <a href="https://www.happ.su/main" target="_blank" class="btn-secondary" id="btnHapp">
-                    Скачать Happ Utility
-                </a>
+
+                <div class="download-group">
+                    <div class="group-label">Скачать Happ</div>
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/happ-proxy-utility/id6504287215?l" target="_blank" class="btn-secondary" id="btnHappAppStore">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.happproxy&hl" target="_blank" class="btn-secondary" id="btnHappGooglePlay">
+                            Google Play
+                        </a>
+                        <a href="https://github.com/happ-proxy" target="_blank" class="btn-secondary" id="btnHappGitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-group">
+                    <div class="group-label">Скачать Incy</div>
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/ru/app/incy/id6756943388" target="_blank" class="btn-secondary" id="btnIncyAppStore">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=llc.itdev.incy&hl" target="_blank" class="btn-secondary" id="btnIncyGooglePlay">
+                            Google Play
+                        </a>
+                        <a href="https://github.com/INCY-DEV/incy-platforms" target="_blank" class="btn-secondary" id="btnIncyGitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -368,7 +416,12 @@
             heroDesc1: "WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Мы используем современный протокол VLESS+TLS, который инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).",
             heroDisclaimer: "<strong>Важная техническая особенность:</strong> Несмотря на то, что алгоритмы VLESS+TLS успешно обходят DPI-фильтры за счет HTTPS-мимикрии, соединение <strong>не сможет функционировать</strong>, если ваш интернет-провайдер задействует полную блокировку по «белым спискам». VPN использует собственный выделенный домен, который в такие списки изначально не входит.",
             btnVpn: "Подключить VPN",
-            btnHapp: "Скачать Happ Utility",
+            btnHappAppStore: "App Store",
+            btnHappGooglePlay: "Google Play",
+            btnHappGitHub: "GitHub",
+            btnIncyAppStore: "App Store",
+            btnIncyGooglePlay: "Google Play",
+            btnIncyGitHub: "GitHub",
             langBtn: "EN",
             copyright: "© 2026 WT419 VPN. Все права защищены."
         },
@@ -376,9 +429,14 @@
             title: "WT419 VPN",
             heroTitle: "Absolute Freedom. <br><span>No Limitations.</span>",
             heroDesc1: "WT419 VPN is engineered to deliver strong privacy and reliable data protection. We use the modern VLESS+TLS protocol to encapsulate and obfuscate data streams as standard web traffic, helping keep them invisible to Deep Packet Inspection (DPI) blocks.",
-            heroDisclaimer: "<strong>Technical Notice:</strong> Although VLESS+TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
+            heroDisclaimer: "<strong>Technical Notice:</strong> Although VLESS-TLS effectively bypasses DPI filters through HTTPS-mimicry, the connection <strong>will not function</strong> if your ISP enforces strict 'white-listing' policies. The VPN relies on its own dedicated domain, which is inherently missing from such white lists.",
             btnVpn: "Connect VPN",
-            btnHapp: "Download Happ Utility",
+            btnHappAppStore: "App Store",
+            btnHappGooglePlay: "Google Play",
+            btnHappGitHub: "GitHub",
+            btnIncyAppStore: "App Store",
+            btnIncyGooglePlay: "Google Play",
+            btnIncyGitHub: "GitHub",
             langBtn: "RU",
             copyright: "© 2026 WT419 VPN. All rights reserved."
         }
@@ -398,7 +456,12 @@
         document.getElementById('heroDesc1').innerText = langData[currentLang].heroDesc1;
         document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
         document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
-        document.getElementById('btnHapp').innerText = langData[currentLang].btnHapp;
+        document.getElementById('btnHappAppStore').innerText = langData[currentLang].btnHappAppStore;
+        document.getElementById('btnHappGooglePlay').innerText = langData[currentLang].btnHappGooglePlay;
+        document.getElementById('btnHappGitHub').innerText = langData[currentLang].btnHappGitHub;
+        document.getElementById('btnIncyAppStore').innerText = langData[currentLang].btnIncyAppStore;
+        document.getElementById('btnIncyGooglePlay').innerText = langData[currentLang].btnIncyGooglePlay;
+        document.getElementById('btnIncyGitHub').innerText = langData[currentLang].btnIncyGitHub;
         document.getElementById('langBtn').innerText = langData[currentLang].langBtn;
         document.getElementById('footerCopyright').innerText = langData[currentLang].copyright;
     }
