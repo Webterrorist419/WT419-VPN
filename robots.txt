@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mirror.wt419.site/sitemap.xml
+Host: mirror.wt419.site
