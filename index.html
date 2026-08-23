@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">WT419 VPN — Secure VLESS+TLS VPN</title>
+    <title id="pageTitle">WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности</title>
 
     <meta name="application-name" content="WT419 VPN">
-    <meta name="description" content="WT419 VPN — безопасный VLESS+TLS VPN для обхода DPI, защиты приватности и стабильного интернет-соединения на mirror.wt419.site.">
+    <meta name="description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения. Подключение через приложение Happ.">
+    <meta name="keywords" content="VPN, VLESS+TLS, безопасный VPN, обход DPI, защита приватности, анонимность, WT419 VPN">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#0b0f19">
     <meta name="msapplication-TileColor" content="#0b0f19">
 
     <meta property="og:site_name" content="WT419 VPN">
-    <meta property="og:title" content="WT419 VPN — Secure VLESS+TLS VPN">
-    <meta property="og:description" content="WT419 VPN — безопасный VLESS+TLS VPN для обхода DPI, защиты приватности и стабильного интернет-соединения.">
+    <meta property="og:title" content="WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности">
+    <meta property="og:description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения. Подключение через приложение Happ.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mirror.wt419.site/">
     <meta property="og:image" content="https://mirror.wt419.site/wt419vpn.png">
@@ -21,13 +22,13 @@
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WT419 VPN">
-    <meta name="twitter:description" content="WT419 VPN — безопасный VLESS+TLS VPN для обхода DPI и защиты приватности.">
+    <meta name="twitter:title" content="WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности">
+    <meta name="twitter:description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения.">
     <meta name="twitter:image" content="https://mirror.wt419.site/wt419vpn.png">
     <meta name="twitter:image:alt" content="WT419 VPN logo">
     <link rel="canonical" href="https://mirror.wt419.site/">
-    <link rel="icon" type="image/png" href="https://mirror.wt419.site/wt419vpn.png">
-    <link rel="apple-touch-icon" href="https://mirror.wt419.site/wt419vpn.png">
+    <link rel="icon" type="image/png" href="/wt419vpn.png">
+    <link rel="apple-touch-icon" href="/wt419vpn.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +193,28 @@
             line-height: 1.6;
             color: var(--text-secondary);
             margin-bottom: 16px;
+        }
+
+        .benefits {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .benefits li {
+            background: rgba(0, 136, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .benefits li strong {
+            color: var(--cyber-blue);
         }
 
         .disclaimer-box {
@@ -360,10 +383,16 @@
     <main class="hero-container">
         
         <div class="hero-info">
-            <h1 id="heroTitle">Абсолютная свобода. <br><span>Без ограничений.</span></h1>
+            <h1 id="heroTitle">Безопасность. <br><span>Скорость. Свобода.</span></h1>
             <p id="heroDesc1">
-                WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Мы используем современный протокол VLESS+TLS, который инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).
+                WT419 VPN — независимый VPN-проект для тех, кто ценит приватность, стабильность соединения и высокую скорость. Мы используем VLESS+TLS, чтобы замаскировать трафик под обычный HTTPS, сделать подключение менее заметным для DPI и обеспечить комфортную работу без лишних ограничений.
             </p>
+
+            <ul class="benefits" id="benefitsList">
+                <li><strong>Приватность</strong><br>Скрытие трафика и защита данных</li>
+                <li><strong>Стабильность</strong><br>Надёжное подключение без резких обрывов</li>
+                <li><strong>Скорость</strong><br>Оптимизация под современный интернет</li>
+            </ul>
             
             <div class="disclaimer-box">
                 <p id="heroDisclaimer">
@@ -386,7 +415,7 @@
                 <div class="download-group">
                     <div class="group-label" id="groupHapp">Скачать Happ</div>
                     <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/happ-proxy-utility/id6504287215?l" target="_blank" class="btn-secondary" id="btnHappAppStore">
+                        <a href="https://apps.apple.com/app/happ-proxy-utility/id6504287215?platform=mac" target="_blank" class="btn-secondary" id="btnHappAppStore">
                             App Store
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.happproxy&hl" target="_blank" class="btn-secondary" id="btnHappGooglePlay">
@@ -398,6 +427,20 @@
                     </div>
                 </div>
 
+                <div class="download-group">
+                    <div class="group-label" id="groupIncy">Скачать INCY</div>
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/app/incy/id6756943388" target="_blank" class="btn-secondary" id="btnIncyAppStore">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=llc.itdev.incy&hl" target="_blank" class="btn-secondary" id="btnIncyGooglePlay">
+                            Google Play
+                        </a>
+                        <a href="https://github.com/INCY-DEV/incy-platforms" target="_blank" class="btn-secondary" id="btnIncyGitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
 
             </div>
 
@@ -415,12 +458,12 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "WT419 VPN",
-      "url": "https://www.wt419.site/",
+      "url": "https://mirror.wt419.site/",
       "description": "WT419 VPN — безопасный VLESS+TLS VPN для обхода DPI, защиты приватности и стабильного интернет-соединения.",
       "publisher": {
         "@type": "Organization",
         "name": "WT419 VPN",
-        "url": "https://www.wt419.site/"
+        "url": "https://mirror.wt419.site/"
       }
     }
     </script>
@@ -429,27 +472,41 @@
     const langData = {
         ru: {
             title: "WT419 VPN",
-            heroTitle: "Абсолютная свобода. <br><span>Без ограничений.</span>",
-            heroDesc1: "WT419 VPN разработан для обеспечения полной анонимности и надежной защиты данных. Мы используем современный протокол VLESS+TLS, который инкапсулирует и маскирует трафик под обычное веб-соединение, делая его невидимым для систем глубокого анализа пакетов (DPI).",
+            heroTitle: "Безопасность. <br><span>Скорость. Свобода.</span>",
+            heroDesc1: "WT419 VPN — независимый VPN-проект для тех, кто ценит приватность, стабильность соединения и высокую скорость. Мы используем VLESS+TLS, чтобы замаскировать трафик под обычный HTTPS, сделать подключение менее заметным для DPI и обеспечить комфортную работу без лишних ограничений.",
+            benefit1: "<strong>Приватность</strong><br>Скрытие трафика и защита данных",
+            benefit2: "<strong>Стабильность</strong><br>Надёжное подключение без резких обрывов",
+            benefit3: "<strong>Скорость</strong><br>Оптимизация под современный интернет",
             heroDisclaimer: "Для подключения к VPN необходимо установить приложение Happ.",
             btnVpn: "Подключить VPN",
             btnHappAppStore: "App Store",
             btnHappGooglePlay: "Google Play",
             btnHappGitHub: "GitHub",
             groupHapp: "Скачать Happ",
+            btnIncyAppStore: "App Store",
+            btnIncyGooglePlay: "Google Play",
+            btnIncyGitHub: "GitHub",
+            groupIncy: "Скачать INCY",
             langBtn: "EN",
             copyright: "© 2026 WT419 VPN. Все права защищены."
         },
         en: {
             title: "WT419 VPN",
-            heroTitle: "Absolute Freedom. <br><span>No Limits.</span>",
-            heroDesc1: "WT419 VPN is designed to provide complete privacy and reliable data protection. We use the modern VLESS+TLS protocol to encapsulate and disguise traffic as regular web traffic, making it invisible to deep packet inspection (DPI) systems.",
+            heroTitle: "Security. <br><span>Speed. Freedom.</span>",
+            heroDesc1: "WT419 VPN is an independent VPN project for users who value privacy, connection stability, and high performance. We use VLESS+TLS to disguise traffic as regular HTTPS traffic, make the connection less visible to DPI, and provide a smoother experience without unnecessary limits.",
+            benefit1: "<strong>Privacy</strong><br>Traffic masking and data protection",
+            benefit2: "<strong>Stability</strong><br>Reliable connection without sudden drops",
+            benefit3: "<strong>Speed</strong><br>Optimized for modern internet usage",
             heroDisclaimer: "To connect to the VPN, you need to install the Happ app.",
             btnVpn: "Connect VPN",
             btnHappAppStore: "App Store",
             btnHappGooglePlay: "Google Play",
             btnHappGitHub: "GitHub",
             groupHapp: "Download Happ",
+            btnIncyAppStore: "App Store",
+            btnIncyGooglePlay: "Google Play",
+            btnIncyGitHub: "GitHub",
+            groupIncy: "Download INCY",
             langBtn: "RU",
             copyright: "© 2026 WT419 VPN. All rights reserved."
         }
@@ -467,12 +524,21 @@
         document.title = langData[currentLang].title;
         document.getElementById('heroTitle').innerHTML = langData[currentLang].heroTitle;
         document.getElementById('heroDesc1').innerText = langData[currentLang].heroDesc1;
+        document.getElementById('benefitsList').innerHTML = `
+            <li>${langData[currentLang].benefit1}</li>
+            <li>${langData[currentLang].benefit2}</li>
+            <li>${langData[currentLang].benefit3}</li>
+        `;
         document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
         document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
         document.getElementById('groupHapp').innerText = langData[currentLang].groupHapp;
         document.getElementById('btnHappAppStore').innerText = langData[currentLang].btnHappAppStore;
         document.getElementById('btnHappGooglePlay').innerText = langData[currentLang].btnHappGooglePlay;
         document.getElementById('btnHappGitHub').innerText = langData[currentLang].btnHappGitHub;
+        document.getElementById('groupIncy').innerText = langData[currentLang].groupIncy;
+        document.getElementById('btnIncyAppStore').innerText = langData[currentLang].btnIncyAppStore;
+        document.getElementById('btnIncyGooglePlay').innerText = langData[currentLang].btnIncyGooglePlay;
+        document.getElementById('btnIncyGitHub').innerText = langData[currentLang].btnIncyGitHub;
         document.getElementById('langBtn').innerText = langData[currentLang].langBtn;
         document.getElementById('footerCopyright').innerText = langData[currentLang].copyright;
     }
