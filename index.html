@@ -1,548 +1,439 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности</title>
 
+    <title>WT419 VPN — Fast, Secure & Private VPN Service</title>
+
+    <meta
+        name="description"
+        content="WT419 VPN is a fast, secure and private VPN service for online privacy and unrestricted internet access. Connect easily through Telegram."
+    >
+
+    <meta
+        name="keywords"
+        content="VPN, VPN service, fast VPN, secure VPN, private VPN, best VPN, VPN connection, online privacy, internet privacy, VPN for Android, VPN for iPhone, VPN for Windows, VPN for macOS, VPN for Linux, secure internet, private internet, VPN server, WT419 VPN, WT419"
+    >
+
+    <meta name="author" content="WT419 VPN">
     <meta name="application-name" content="WT419 VPN">
-    <meta name="description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения. Подключение через приложение Happ.">
-    <meta name="keywords" content="VPN, VLESS+TLS, безопасный VPN, обход DPI, защита приватности, анонимность, WT419 VPN">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#0b0f19">
-    <meta name="msapplication-TileColor" content="#0b0f19">
+    <meta name="theme-color" content="#000000">
+    <meta name="robots" content="index, follow">
 
-    <meta property="og:site_name" content="WT419 VPN">
-    <meta property="og:title" content="WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности">
-    <meta property="og:description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения. Подключение через приложение Happ.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mirror.wt419.site/">
-    <meta property="og:image" content="https://mirror.wt419.site/wt419vpn.png">
-    <meta property="og:image:alt" content="WT419 VPN logo">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WT419 VPN — Безопасный VPN для обхода DPI и защиты приватности">
-    <meta name="twitter:description" content="WT419 VPN — безопасный VPN с VLESS+TLS для обхода DPI, защиты приватности и стабильного интернет-соединения.">
-    <meta name="twitter:image" content="https://mirror.wt419.site/wt419vpn.png">
-    <meta name="twitter:image:alt" content="WT419 VPN logo">
     <link rel="canonical" href="https://mirror.wt419.site/">
-    <link rel="icon" type="image/png" href="/wt419vpn.png">
-    <link rel="apple-touch-icon" href="/wt419vpn.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="/wt419vpn.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="/wt419vpn.png"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:title"
+        content="WT419 VPN — Fast, Secure & Private VPN Service"
+    >
+
+    <meta
+        property="og:description"
+        content="Fast, secure and private VPN service for online privacy and unrestricted internet access."
+    >
+
+    <meta
+        property="og:url"
+        content="https://mirror.wt419.site/"
+    >
+
+    <meta
+        property="og:site_name"
+        content="WT419 VPN"
+    >
+
+    <!-- Twitter / X -->
+    <meta
+        name="twitter:card"
+        content="summary"
+    >
+
+    <meta
+        name="twitter:title"
+        content="WT419 VPN — Fast, Secure & Private VPN Service"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Fast, secure and private VPN service for online privacy and unrestricted internet access."
+    >
 
     <style>
-        /* ТЕМНАЯ ТЕМА (По умолчанию) */
-        :root {
-            --bg-main: #0b0f19;         /* Глубокий полуночно-синий */
-            --bg-card: #131a2e;         /* Фон панелей */
-            --cyber-blue: #0088ff;      /* Электрический синий */
-            --cyber-red: #ff3366;       /* Неоновый красный */
-            --text-primary: #ffffff;    /* Белый текст */
-            --text-secondary: #94a3b8;  /* Серый текст */
-            --border-color: #222f4d;    /* Границы */
-            --radius-lg: 24px;
-            --radius-md: 16px;
-            --bg-glow-1: rgba(0, 136, 255, 0.15);
-            --bg-glow-2: rgba(255, 51, 102, 0.08);
-            --disclaimer-bg: rgba(255, 51, 102, 0.05);
-            --disclaimer-text: #f1f5f9;
-            --btn-sec-bg: rgba(255, 255, 255, 0.02);
-        }
-
-        /* СВЕТЛАЯ ТЕМА */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-main: #f4f6fa;
-                --bg-card: #ffffff;
-                --cyber-blue: #0066ff;
-                --cyber-red: #e11d48;
-                --text-primary: #0f172a;
-                --text-secondary: #64748b;
-                --border-color: #e2e8f0;
-                --bg-glow-1: rgba(0, 102, 255, 0.06);
-                --bg-glow-2: rgba(225, 29, 72, 0.04);
-                --disclaimer-bg: rgba(225, 29, 72, 0.04);
-                --disclaimer-text: #1e293b;
-                --btn-sec-bg: rgba(15, 23, 42, 0.02);
-            }
-        }
-
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
-        
+
+        html {
+            background: #000;
+        }
+
         body {
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
-            position: relative;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 70px 20px 30px;
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            top: -150px;
-            left: calc(50% - 250px);
-            background: radial-gradient(circle, var(--bg-glow-1) 0%, transparent 75%);
-            z-index: 0;
-            pointer-events: none;
-        }
-        body::after {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            bottom: -100px;
-            right: -100px;
-            background: radial-gradient(circle, var(--bg-glow-2) 0%, transparent 75%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .navbar {
-            width: 100%;
-            max-width: 1200px;
-            padding: 24px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
+        /* LOGO */
 
         .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--text-primary) 40%, var(--cyber-blue));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .lang-btn {
-            background: var(--btn-sec-bg);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            padding: 8px 18px;
-            border-radius: 100px;
-            font-family: inherit;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .lang-btn:hover {
-            border-color: var(--cyber-blue);
-            background: rgba(0, 136, 255, 0.05);
-        }
-
-        .hero-container {
-            width: 100%;
-            max-width: 1200px;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            z-index: 10;
-            flex-grow: 1;
-        }
-
-        @media (min-width: 1000px) {
-            .hero-container {
-                grid-template-columns: 1.2fr 1fr;
-                align-items: center;
-                padding: 80px 20px;
-            }
-        }
-
-        .hero-info h1 {
-            font-size: 38px;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-        }
-        @media (min-width: 600px) {
-            .hero-info h1 { font-size: 48px; }
-        }
-
-        .hero-info h1 span {
-            color: var(--cyber-blue);
-            background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-red));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-info p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        .benefits {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .benefits li {
-            background: rgba(0, 136, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px 14px;
-            color: var(--text-primary);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .benefits li strong {
-            color: var(--cyber-blue);
-        }
-
-        .disclaimer-box {
-            background: var(--disclaimer-bg);
-            border-left: 3px solid var(--cyber-red);
-            padding: 16px;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            margin-top: 24px;
-        }
-        .disclaimer-box p {
-            font-size: 14px;
-            margin-bottom: 0;
-            color: var(--disclaimer-text);
-        }
-        .disclaimer-box strong {
-            color: var(--cyber-red);
-        }
-
-        .app-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 28px;
-        }
-        
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 136, 255, 0.08);
-            border: 1px solid rgba(0, 136, 255, 0.2);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--cyber-blue);
-        }
-        .status-badge::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: var(--cyber-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--cyber-blue);
-        }
-
-        .actions-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .download-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .group-label {
-            font-size: 12px;
+            font-size: 30px;
             font-weight: 700;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            padding-left: 4px;
+            letter-spacing: 0.5px;
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, 0.7),
+                0 0 20px rgba(255, 255, 255, 0.25);
+            margin-bottom: 7px;
         }
 
-        .store-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
         }
 
-        .btn-primary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--cyber-blue), #0055ff);
-            color: #ffffff;
+        /* CONNECT BUTTON */
+
+        .connect {
+            display: inline-block;
+            background: #008cff;
+            color: #fff;
+            padding: 14px 40px;
+            border-radius: 7px;
             font-size: 16px;
             font-weight: 700;
-            padding: 18px;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 25px rgba(0, 85, 255, 0.25);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.4px;
+            margin-bottom: 38px;
+            border: 1px solid #20a0ff;
+            box-shadow:
+                0 0 7px #008cff,
+                0 0 18px rgba(0, 140, 255, 0.75),
+                0 0 35px rgba(0, 140, 255, 0.35);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
-        .btn-primary:hover {
+
+        .connect:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(0, 136, 255, 0.5);
+            box-shadow:
+                0 0 10px #008cff,
+                0 0 25px rgba(0, 140, 255, 0.9),
+                0 0 45px rgba(0, 140, 255, 0.5);
         }
 
-        .btn-secondary {
+        /* APP CONTAINER */
+
+        .apps {
+            width: min(760px, 100%);
+            display: grid;
+            gap: 15px;
+        }
+
+        /* APP BLOCK */
+
+        .app-block {
+            background: #050505;
+            border: 1px solid #242424;
+            border-radius: 9px;
+            padding: 13px;
+            box-shadow:
+                0 0 15px rgba(255, 255, 255, 0.02);
+        }
+
+        /* APP HEADER */
+
+        .app-header {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            background: var(--btn-sec-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            font-size: 15px;
-            font-weight: 600;
-            padding: 16px;
-            border-radius: var(--radius-md);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-secondary:hover {
-            background: var(--cyber-red);
-            border-color: var(--cyber-red);
-            color: #ffffff;
-            font-weight: 700;
-            box-shadow: 
-                0 0 10px rgba(255, 51, 102, 0.4), 
-                0 0 30px rgba(255, 51, 102, 0.6), 
-                0 10px 25px rgba(255, 51, 102, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .warning-box {
-            display: none;
-            background: rgba(255, 51, 102, 0.06);
-            border: 1px solid rgba(255, 51, 102, 0.15);
-            color: var(--cyber-red);
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            margin-top: 20px;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .footer {
-            width: 100%;
-            max-width: 1200px;
-            padding: 32px 20px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
             align-items: center;
             justify-content: space-between;
-            font-size: 14px;
-            color: var(--text-secondary);
-            z-index: 10;
+            margin-bottom: 10px;
+            padding: 0 3px;
         }
-        @media (min-width: 600px) {
-            .footer { flex-direction: row; }
+
+        .app-name {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .app-type {
+            color: #666;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* DOWNLOAD BUTTONS */
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .download {
+            display: block;
+            background: #000;
+            border: 1px solid #ff1744;
+            color: #fff;
+            padding: 10px 8px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow:
+                0 0 5px rgba(255, 23, 68, 0.7),
+                0 0 12px rgba(255, 23, 68, 0.25);
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .download:hover {
+            background: #ff1744;
+            border-color: #ff1744;
+            box-shadow:
+                0 0 8px #ff1744,
+                0 0 18px rgba(255, 23, 68, 0.9),
+                0 0 35px rgba(255, 23, 68, 0.55);
+            transform: translateY(-2px);
+        }
+
+        .download small {
+            display: block;
+            color: #ff9db1;
+            font-size: 10px;
+            font-weight: 400;
+            margin-top: 2px;
+            transition: color 0.2s ease;
+        }
+
+        .download:hover small {
+            color: #fff;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: auto;
+            padding-top: 45px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        footer a {
+            color: #777;
+            text-decoration: none;
+            transition:
+                color 0.2s ease,
+                text-shadow 0.2s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+            .page {
+                padding-top: 50px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .download {
+                padding: 12px;
+            }
+
+            .app-header {
+                margin-bottom: 9px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo">WT419 // VPN</div>
-        <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">EN</button>
-    </nav>
+<div class="page">
 
-    <main class="hero-container">
-        
-        <div class="hero-info">
-            <h1 id="heroTitle">Безопасность. <br><span>Скорость. Свобода.</span></h1>
-            <p id="heroDesc1">
-                WT419 VPN — независимый VPN-проект для тех, кто ценит приватность, стабильность соединения и высокую скорость. Мы используем VLESS+TLS, чтобы замаскировать трафик под обычный HTTPS, сделать подключение менее заметным для DPI и обеспечить комфортную работу без лишних ограничений.
-            </p>
+    <!-- SITE NAME -->
 
-            <ul class="benefits" id="benefitsList">
-                <li><strong>Приватность</strong><br>Скрытие трафика и защита данных</li>
-                <li><strong>Стабильность</strong><br>Надёжное подключение без резких обрывов</li>
-                <li><strong>Скорость</strong><br>Оптимизация под современный интернет</li>
-            </ul>
-            
-            <div class="disclaimer-box">
-                <p id="heroDisclaimer">
-                    Для подключения к VPN необходимо установить приложение Happ или Incy.
-                </p>
+    <div class="logo">
+        WT419 VPN
+    </div>
+
+    <div class="subtitle">
+        Fast · Private · Secure
+    </div>
+
+
+    <!-- MAIN VPN CONNECTION -->
+
+    <a
+        class="connect"
+        href="https://t.me/wt419vpnbot"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        CONNECT VPN
+    </a>
+
+
+    <!-- VPN CLIENTS -->
+
+    <div class="apps">
+
+        <!-- HAPP -->
+
+        <div class="app-block">
+
+            <div class="app-header">
+
+                <div class="app-name">
+                    Happ
+                </div>
+
+                <div class="app-type">
+                    VPN Client
+                </div>
+
             </div>
-        </div>
 
-        <div class="app-card">
-            <div class="card-header">
-                <span style="font-weight: 700; font-size: 15px; color: var(--text-secondary); letter-spacing: 0.5px;">VLESS + TLS STEALTH</span>
-                <span class="status-badge">ONLINE</span>
-            </div>
+            <div class="buttons">
 
-            <div class="actions-list">
-                <a href="https://t.me/wt419vpnrubot" target="_blank" class="btn-primary" id="btnVpn">
-                    Подключить VPN
+                <a
+                    class="download"
+                    href="https://play.google.com/store/apps/details?id=com.happproxy&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Google Play
+                    <small>Android</small>
                 </a>
 
-                <div class="download-group">
-                    <div class="group-label" id="groupHapp">Скачать Happ</div>
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/app/happ-proxy-utility/id6504287215?platform=mac" target="_blank" class="btn-secondary" id="btnHappAppStore">
-                            App Store
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.happproxy&hl" target="_blank" class="btn-secondary" id="btnHappGooglePlay">
-                            Google Play
-                        </a>
-                        <a href="https://github.com/happ-proxy" target="_blank" class="btn-secondary" id="btnHappGitHub">
-                            GitHub
-                        </a>
-                    </div>
+                <a
+                    class="download"
+                    href="https://apps.apple.com/app/happ-proxy-utility/id6504287215"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    App Store
+                    <small>iPhone & iPad</small>
+                </a>
+
+                <a
+                    class="download"
+                    href="https://github.com/happ-proxy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                    <small>Other platforms</small>
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- INCY -->
+
+        <div class="app-block">
+
+            <div class="app-header">
+
+                <div class="app-name">
+                    Incy
                 </div>
 
-                <div class="download-group">
-                    <div class="group-label" id="groupIncy">Скачать INCY</div>
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/app/incy/id6756943388" target="_blank" class="btn-secondary" id="btnIncyAppStore">
-                            App Store
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=llc.itdev.incy&hl" target="_blank" class="btn-secondary" id="btnIncyGooglePlay">
-                            Google Play
-                        </a>
-                        <a href="https://github.com/INCY-DEV/incy-platforms" target="_blank" class="btn-secondary" id="btnIncyGitHub">
-                            GitHub
-                        </a>
-                    </div>
+                <div class="app-type">
+                    VPN Client
                 </div>
 
             </div>
 
+            <div class="buttons">
+
+                <a
+                    class="download"
+                    href="https://play.google.com/store/apps/details?id=llc.itdev.incy&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Google Play
+                    <small>Android</small>
+                </a>
+
+                <a
+                    class="download"
+                    href="https://apps.apple.com/app/incy/id6756943388"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    App Store
+                    <small>iPhone & iPad</small>
+                </a>
+
+                <a
+                    class="download"
+                    href="https://github.com/INCY-DEV/incy-platforms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                    <small>Other platforms</small>
+                </a>
+
+            </div>
         </div>
 
-    </main>
+    </div>
 
-    <footer class="footer">
-        <div id="footerCopyright">© 2026 WT419 VPN. Все права защищены.</div>
-        <div style="font-size: 13px; color: var(--text-secondary);">NEXT_GEN_SECURITY_NODE</div>
+
+    <!-- BLOG -->
+
+    <footer>
+        <a href="https://mirror.wt419.site/">
+            VPN Blog
+        </a>
     </footer>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "WT419 VPN",
-    "url": "https://mirror.wt419.site/",
-      "description": "WT419 VPN — безопасный VLESS+TLS VPN для обхода DPI, защиты приватности и стабильного интернет-соединения.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "WT419 VPN",
-        "url": "https://mirror.wt419.site/"
-      }
-    }
-    </script>
-
-<script>
-    const langData = {
-        ru: {
-            title: "WT419 VPN",
-            heroTitle: "Безопасность. <br><span>Скорость. Свобода.</span>",
-            heroDesc1: "WT419 VPN — независимый VPN-проект для тех, кто ценит приватность, стабильность соединения и высокую скорость. Мы используем VLESS+TLS, чтобы замаскировать трафик под обычный HTTPS, сделать подключение менее заметным для DPI и обеспечить комфортную работу без лишних ограничений.",
-            benefit1: "<strong>Приватность</strong><br>Скрытие трафика и защита данных",
-            benefit2: "<strong>Стабильность</strong><br>Надёжное подключение без резких обрывов",
-            benefit3: "<strong>Скорость</strong><br>Оптимизация под современный интернет",
-            heroDisclaimer: "Для подключения к VPN необходимо установить приложение Happ или Incy.",
-            btnVpn: "Подключить VPN",
-            btnHappAppStore: "App Store",
-            btnHappGooglePlay: "Google Play",
-            btnHappGitHub: "GitHub",
-            groupHapp: "Скачать Happ",
-            btnIncyAppStore: "App Store",
-            btnIncyGooglePlay: "Google Play",
-            btnIncyGitHub: "GitHub",
-            groupIncy: "Скачать INCY",
-            langBtn: "EN",
-            copyright: "© 2026 WT419 VPN. Все права защищены."
-        },
-        en: {
-            title: "WT419 VPN",
-            heroTitle: "Security. <br><span>Speed. Freedom.</span>",
-            heroDesc1: "WT419 VPN is an independent VPN project for users who value privacy, connection stability, and high performance. We use VLESS+TLS to disguise traffic as regular HTTPS traffic, make the connection less visible to DPI, and provide a smoother experience without unnecessary limits.",
-            benefit1: "<strong>Privacy</strong><br>Traffic masking and data protection",
-            benefit2: "<strong>Stability</strong><br>Reliable connection without sudden drops",
-            benefit3: "<strong>Speed</strong><br>Optimized for modern internet usage",
-            heroDisclaimer: "To connect to the VPN, you need to install the Happ or Incy app.",
-            btnVpn: "Connect VPN",
-            btnHappAppStore: "App Store",
-            btnHappGooglePlay: "Google Play",
-            btnHappGitHub: "GitHub",
-            groupHapp: "Download Happ",
-            btnIncyAppStore: "App Store",
-            btnIncyGooglePlay: "Google Play",
-            btnIncyGitHub: "GitHub",
-            groupIncy: "Download INCY",
-            langBtn: "RU",
-            copyright: "© 2026 WT419 VPN. All rights reserved."
-        }
-    };
-
-    let currentLang = 'ru';
-
-    function toggleLanguage() {
-        if (currentLang === 'ru') {
-            currentLang = 'en';
-        } else {
-            currentLang = 'ru';
-        }
-
-        document.title = langData[currentLang].title;
-        document.getElementById('heroTitle').innerHTML = langData[currentLang].heroTitle;
-        document.getElementById('heroDesc1').innerText = langData[currentLang].heroDesc1;
-        document.getElementById('benefitsList').innerHTML = `
-            <li>${langData[currentLang].benefit1}</li>
-            <li>${langData[currentLang].benefit2}</li>
-            <li>${langData[currentLang].benefit3}</li>
-        `;
-        document.getElementById('heroDisclaimer').innerHTML = langData[currentLang].heroDisclaimer;
-        document.getElementById('btnVpn').innerText = langData[currentLang].btnVpn;
-        document.getElementById('groupHapp').innerText = langData[currentLang].groupHapp;
-        document.getElementById('btnHappAppStore').innerText = langData[currentLang].btnHappAppStore;
-        document.getElementById('btnHappGooglePlay').innerText = langData[currentLang].btnHappGooglePlay;
-        document.getElementById('btnHappGitHub').innerText = langData[currentLang].btnHappGitHub;
-        document.getElementById('groupIncy').innerText = langData[currentLang].groupIncy;
-        document.getElementById('btnIncyAppStore').innerText = langData[currentLang].btnIncyAppStore;
-        document.getElementById('btnIncyGooglePlay').innerText = langData[currentLang].btnIncyGooglePlay;
-        document.getElementById('btnIncyGitHub').innerText = langData[currentLang].btnIncyGitHub;
-        document.getElementById('langBtn').innerText = langData[currentLang].langBtn;
-        document.getElementById('footerCopyright').innerText = langData[currentLang].copyright;
-    }
-</script>
+</div>
 
 </body>
 </html>
