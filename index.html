@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WT419 VPN</title>
+<title>WT419 VPN (Mirror)</title>
 
-<meta name="description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification" content="deCZZMiPkXoC12rQxj_0oIajnZ7TxNmk51a9NiYuUoY" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGBBKZS8');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTZZ2CNBR8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NTZZ2CNBR8');
+</script>
+
+<meta name="description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access. Official mirror site.">
 <meta name="author" content="WT419 VPN">
 <meta name="application-name" content="WT419 VPN">
 <meta name="theme-color" content="#000000">
@@ -14,15 +35,21 @@
 
 <link rel="canonical" href="https://mirror.wt419.site/">
 
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="WT419 VPN — Fast, Secure & Private VPN Service">
-<meta property="og:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
+<meta property="og:title" content="WT419 VPN — Mirror">
+<meta property="og:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access. Official mirror site.">
 <meta property="og:url" content="https://mirror.wt419.site/">
-<meta property="og:site_name" content="WT419 VPN">
+<meta property="og:site_name" content="WT419 VPN Mirror">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WT419 VPN — Fast, Secure & Private VPN Service">
-<meta name="twitter:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
+<meta name="twitter:title" content="WT419 VPN — Mirror">
+<meta name="twitter:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access. Official mirror site.">
 
 <style>
     * {
@@ -93,8 +120,22 @@
             drop-shadow(0 0 30px rgba(255, 190, 30, 0.08));
     }
 
+    .mirror-badge {
+        display: inline-block;
+        margin: 6px 0 14px;
+        padding: 4px 10px;
+        background: rgba(218, 168, 35, 0.1);
+        border: 1px solid rgba(218, 168, 35, 0.3);
+        border-radius: 20px;
+        color: #e4bd50;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
     .subtitle {
-        margin: 12px auto 20px;
+        margin: 6px auto 20px;
         max-width: 440px;
 
         color: #e4bd50;
@@ -154,7 +195,7 @@
         min-height: 62px;
 
         padding: 16px 24px;
-        margin-bottom: 32px;
+        margin-bottom: 20px;
 
         border-radius: 14px;
 
@@ -196,6 +237,41 @@
 
     .connect-button:active {
         transform: translateY(0);
+    }
+
+    .instruction-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 24px;
+        margin-bottom: 28px;
+
+        border: 1px solid rgba(218, 168, 35, 0.4);
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.03);
+        color: #e4bd50;
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .instruction-button:hover {
+        transform: translateY(-1px);
+        color: #fff4b0;
+        border-color: rgba(218, 168, 35, 0.8);
+        background: rgba(218, 168, 35, 0.08);
     }
 
     .download-title {
@@ -364,12 +440,17 @@
     }
 </style>
 </head>
-
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGBBKZS8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <main class="container">
 
 <h1 class="logo">WT419 VPN</h1>
+<div class="mirror-badge" id="mirror-badge">Mirror Site</div>
 
 <p class="subtitle" id="subtitle">
     Бесплатный VPN с быстрым и безопасным подключением
@@ -391,6 +472,14 @@
     href="happ://add/https://wt419.site:419/wt/vsq9i55ena5uhgmf"
 >
     Подключить через Happ
+</a>
+
+<a
+    id="instruction-btn"
+    class="instruction-button"
+    href="instruction-1.html"
+>
+    Инструкция по подключению
 </a>
 
 <h2 class="download-title" id="download-title">
@@ -482,7 +571,7 @@
 </section>
 
 <footer>
-    WT419 VPN
+    WT419 VPN &bull; Mirror
 </footer>
 
 </main>
@@ -490,8 +579,10 @@
 <script>
     const translations = {
         ru: {
+            badge: "Зеркало сайта",
             subtitle: "Бесплатный VPN с быстрым и безопасным подключением",
             connect: "Подключить через Happ",
+            instructionBtn: "Инструкция по подключению",
             download: "Скачать Happ",
             donationTitle: "Поддержать WT419 VPN",
             donationText: "Если вам нравится проект, вы можете поддержать его криптовалютным донатом.",
@@ -499,8 +590,10 @@
         },
 
         en: {
+            badge: "Mirror Site",
             subtitle: "Free VPN with a fast and secure connection",
             connect: "Connect with Happ",
+            instructionBtn: "Connection Guide",
             download: "Download Happ",
             donationTitle: "Support WT419 VPN",
             donationText: "If you like the project, you can support it with a crypto donation.",
@@ -513,8 +606,10 @@
 
         document.documentElement.lang = lang;
 
+        document.getElementById("mirror-badge").textContent = text.badge;
         document.getElementById("subtitle").textContent = text.subtitle;
         document.getElementById("connect").textContent = text.connect;
+        document.getElementById("instruction-btn").textContent = text.instructionBtn;
         document.getElementById("download-title").textContent = text.download;
         document.getElementById("donation-title").textContent = text.donationTitle;
         document.getElementById("donation-text").textContent = text.donationText;
