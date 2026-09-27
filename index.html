@@ -1,439 +1,557 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>WT419 VPN — Fast, Secure & Private VPN Service</title>
+<title>WT419 VPN</title>
 
-    <meta
-        name="description"
-        content="WT419 VPN is a fast, secure and private VPN service for online privacy and unrestricted internet access. Connect easily through Telegram."
-    >
+<meta name="description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
+<meta name="author" content="WT419 VPN">
+<meta name="application-name" content="WT419 VPN">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="index, follow">
 
-    <meta
-        name="keywords"
-        content="VPN, VPN service, fast VPN, secure VPN, private VPN, best VPN, VPN connection, online privacy, internet privacy, VPN for Android, VPN for iPhone, VPN for Windows, VPN for macOS, VPN for Linux, secure internet, private internet, VPN server, WT419 VPN, WT419"
-    >
+<link rel="canonical" href="https://mirror.wt419.site/">
 
-    <meta name="author" content="WT419 VPN">
-    <meta name="application-name" content="WT419 VPN">
-    <meta name="theme-color" content="#000000">
-    <meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WT419 VPN — Fast, Secure & Private VPN Service">
+<meta property="og:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
+<meta property="og:url" content="https://mirror.wt419.site/">
+<meta property="og:site_name" content="WT419 VPN">
 
-    <link rel="canonical" href="https://mirror.wt419.site/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WT419 VPN — Fast, Secure & Private VPN Service">
+<meta name="twitter:description" content="Fast, secure and private VPN service for online privacy and unrestricted internet access.">
 
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        type="image/png"
-        href="/wt419vpn.png"
-    >
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-    <link
-        rel="apple-touch-icon"
-        href="/wt419vpn.png"
-    >
+    html {
+        min-height: 100%;
+        background: #000;
+    }
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
 
-    <meta
-        property="og:title"
-        content="WT419 VPN — Fast, Secure & Private VPN Service"
-    >
+        background:
+            radial-gradient(
+                circle at top,
+                #2a2108 0%,
+                #100d05 30%,
+                #050505 65%,
+                #000 100%
+            );
 
-    <meta
-        property="og:description"
-        content="Fast, secure and private VPN service for online privacy and unrestricted internet access."
-    >
+        color: #fff;
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Arial,
+            sans-serif;
+    }
 
-    <meta
-        property="og:url"
-        content="https://mirror.wt419.site/"
-    >
+    .container {
+        width: 100%;
+        max-width: 520px;
+        text-align: center;
+    }
 
-    <meta
-        property="og:site_name"
-        content="WT419 VPN"
-    >
+    .logo {
+        margin: 0;
+        font-size: clamp(42px, 12vw, 72px);
+        font-weight: 900;
+        letter-spacing: -3px;
 
-    <!-- Twitter / X -->
-    <meta
-        name="twitter:card"
-        content="summary"
-    >
+        background:
+            linear-gradient(
+                135deg,
+                #fff4b0 0%,
+                #ffd75a 20%,
+                #c99419 45%,
+                #fff0a0 65%,
+                #b77b08 85%,
+                #ffe27a 100%
+            );
 
-    <meta
-        name="twitter:title"
-        content="WT419 VPN — Fast, Secure & Private VPN Service"
-    >
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
 
-    <meta
-        name="twitter:description"
-        content="Fast, secure and private VPN service for online privacy and unrestricted internet access."
-    >
+        filter:
+            drop-shadow(0 0 12px rgba(255, 204, 60, 0.18))
+            drop-shadow(0 0 30px rgba(255, 190, 30, 0.08));
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    .subtitle {
+        margin: 12px auto 20px;
+        max-width: 440px;
 
-        html {
-            background: #000;
-        }
+        color: #e4bd50;
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 500;
+    }
 
+    .language-switcher {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 28px;
+    }
+
+    .lang-btn {
+        border: 1px solid rgba(218, 168, 35, 0.28);
+        background: rgba(255, 255, 255, 0.025);
+        color: #8e8e8e;
+
+        padding: 6px 12px;
+        border-radius: 8px;
+
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+
+        cursor: pointer;
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .lang-btn:hover {
+        color: #e4bd50;
+        border-color: rgba(218, 168, 35, 0.55);
+    }
+
+    .lang-btn.active {
+        color: #000;
+        background:
+            linear-gradient(
+                135deg,
+                #fff0a0,
+                #dca82b
+            );
+        border-color: #e2b43c;
+    }
+
+    .connect-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 62px;
+
+        padding: 16px 24px;
+        margin-bottom: 32px;
+
+        border-radius: 14px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff0a0 0%,
+                #ffd34f 22%,
+                #c28a14 52%,
+                #f5d66b 76%,
+                #b77c0b 100%
+            );
+
+        color: #090909;
+        text-decoration: none;
+
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.1px;
+
+        box-shadow:
+            0 10px 30px rgba(205, 157, 36, 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            filter 0.2s ease;
+    }
+
+    .connect-button:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.06);
+
+        box-shadow:
+            0 14px 36px rgba(205, 157, 36, 0.28),
+            inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    .connect-button:active {
+        transform: translateY(0);
+    }
+
+    .download-title {
+        margin: 0 0 14px;
+
+        color: #dcb54c;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .downloads {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .download-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 48px;
+        padding: 10px 8px;
+
+        border: 1px solid rgba(218, 168, 35, 0.25);
+        border-radius: 10px;
+
+        background: rgba(255, 255, 255, 0.035);
+        color: #cfcfcf;
+
+        text-decoration: none;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .download-button:hover {
+        transform: translateY(-1px);
+
+        color: #f1d36d;
+        border-color: rgba(218, 168, 35, 0.65);
+        background: rgba(218, 168, 35, 0.07);
+    }
+
+    .donation {
+        margin-top: 28px;
+        padding: 18px;
+
+        border: 1px solid rgba(218, 168, 35, 0.22);
+        border-radius: 14px;
+
+        background: rgba(255, 255, 255, 0.025);
+    }
+
+    .donation-title {
+        margin: 0 0 8px;
+
+        color: #e4bd50;
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .donation-text {
+        margin: 0 0 14px;
+
+        color: #888;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .donation-button {
+        width: 100%;
+        min-height: 44px;
+
+        border: 1px solid rgba(218, 168, 35, 0.35);
+        border-radius: 10px;
+
+        background: rgba(218, 168, 35, 0.06);
+        color: #e4bd50;
+
+        font-size: 13px;
+        font-weight: 700;
+
+        cursor: pointer;
+        transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .donation-button:hover {
+        transform: translateY(-1px);
+        background: rgba(218, 168, 35, 0.11);
+        border-color: rgba(218, 168, 35, 0.65);
+    }
+
+    .donation-addresses {
+        display: none;
+        margin-top: 14px;
+        text-align: left;
+    }
+
+    .wallet {
+        margin-top: 10px;
+    }
+
+    .wallet-name {
+        display: block;
+        margin-bottom: 5px;
+
+        color: #dcb54c;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .wallet-address {
+        width: 100%;
+        padding: 9px;
+
+        border: 1px solid rgba(218, 168, 35, 0.18);
+        border-radius: 8px;
+
+        background: rgba(0, 0, 0, 0.35);
+        color: #888;
+
+        font-size: 10px;
+        word-break: break-all;
+        cursor: pointer;
+    }
+
+    footer {
+        margin-top: 36px;
+
+        color: #555;
+        font-size: 11px;
+        letter-spacing: 0.4px;
+    }
+
+    @media (max-width: 420px) {
         body {
-            margin: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 70px 20px 30px;
-        }
-
-        /* LOGO */
-
-        .logo {
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-shadow:
-                0 0 8px rgba(255, 255, 255, 0.7),
-                0 0 20px rgba(255, 255, 255, 0.25);
-            margin-bottom: 7px;
+            padding: 18px;
         }
 
         .subtitle {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 30px;
+            font-size: 15px;
         }
 
-        /* CONNECT BUTTON */
-
-        .connect {
-            display: inline-block;
-            background: #008cff;
-            color: #fff;
-            padding: 14px 40px;
-            border-radius: 7px;
+        .connect-button {
             font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-            margin-bottom: 38px;
-            border: 1px solid #20a0ff;
-            box-shadow:
-                0 0 7px #008cff,
-                0 0 18px rgba(0, 140, 255, 0.75),
-                0 0 35px rgba(0, 140, 255, 0.35);
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
         }
 
-        .connect:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 0 10px #008cff,
-                0 0 25px rgba(0, 140, 255, 0.9),
-                0 0 45px rgba(0, 140, 255, 0.5);
+        .downloads {
+            grid-template-columns: 1fr;
         }
 
-        /* APP CONTAINER */
-
-        .apps {
-            width: min(760px, 100%);
-            display: grid;
-            gap: 15px;
+        .download-button {
+            min-height: 44px;
         }
-
-        /* APP BLOCK */
-
-        .app-block {
-            background: #050505;
-            border: 1px solid #242424;
-            border-radius: 9px;
-            padding: 13px;
-            box-shadow:
-                0 0 15px rgba(255, 255, 255, 0.02);
-        }
-
-        /* APP HEADER */
-
-        .app-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding: 0 3px;
-        }
-
-        .app-name {
-            font-size: 17px;
-            font-weight: 700;
-        }
-
-        .app-type {
-            color: #666;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        /* DOWNLOAD BUTTONS */
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-
-        .download {
-            display: block;
-            background: #000;
-            border: 1px solid #ff1744;
-            color: #fff;
-            padding: 10px 8px;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow:
-                0 0 5px rgba(255, 23, 68, 0.7),
-                0 0 12px rgba(255, 23, 68, 0.25);
-            transition:
-                background 0.2s ease,
-                border-color 0.2s ease,
-                box-shadow 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .download:hover {
-            background: #ff1744;
-            border-color: #ff1744;
-            box-shadow:
-                0 0 8px #ff1744,
-                0 0 18px rgba(255, 23, 68, 0.9),
-                0 0 35px rgba(255, 23, 68, 0.55);
-            transform: translateY(-2px);
-        }
-
-        .download small {
-            display: block;
-            color: #ff9db1;
-            font-size: 10px;
-            font-weight: 400;
-            margin-top: 2px;
-            transition: color 0.2s ease;
-        }
-
-        .download:hover small {
-            color: #fff;
-        }
-
-        /* FOOTER */
-
-        footer {
-            margin-top: auto;
-            padding-top: 45px;
-            font-size: 12px;
-            color: #555;
-        }
-
-        footer a {
-            color: #777;
-            text-decoration: none;
-            transition:
-                color 0.2s ease,
-                text-shadow 0.2s ease;
-        }
-
-        footer a:hover {
-            color: #fff;
-            text-shadow:
-                0 0 8px rgba(255, 255, 255, 0.6);
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 600px) {
-            .page {
-                padding-top: 50px;
-            }
-
-            .logo {
-                font-size: 27px;
-            }
-
-            .buttons {
-                grid-template-columns: 1fr;
-            }
-
-            .download {
-                padding: 12px;
-            }
-
-            .app-header {
-                margin-bottom: 9px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<main class="container">
 
-    <!-- SITE NAME -->
+<h1 class="logo">WT419 VPN</h1>
 
-    <div class="logo">
-        WT419 VPN
-    </div>
+<p class="subtitle" id="subtitle">
+    Бесплатный VPN с быстрым и безопасным подключением
+</p>
 
-    <div class="subtitle">
-        Fast · Private · Secure
-    </div>
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="ru" type="button" onclick="setLanguage('ru')">
+        RU
+    </button>
 
+    <button class="lang-btn" data-lang="en" type="button" onclick="setLanguage('en')">
+        EN
+    </button>
+</div>
 
-    <!-- MAIN VPN CONNECTION -->
+<a
+    id="connect"
+    class="connect-button"
+    href="happ://add/https://wt419.site:419/wt/vsq9i55ena5uhgmf"
+>
+    Подключить через Happ
+</a>
+
+<h2 class="download-title" id="download-title">
+    Скачать Happ
+</h2>
+
+<div class="downloads">
 
     <a
-        class="connect"
-        href="https://t.me/wt419vpnbot"
+        class="download-button"
+        href="https://play.google.com/store/apps/details?id=com.happproxy&hl=en"
         target="_blank"
         rel="noopener noreferrer"
     >
-        CONNECT VPN
+        Google Play
     </a>
 
+    <a
+        class="download-button"
+        href="https://apps.apple.com/app/happ-proxy-utility/id6504287215"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        App Store
+    </a>
 
-    <!-- VPN CLIENTS -->
+    <a
+        class="download-button"
+        href="https://github.com/happ-proxy"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        GitHub
+    </a>
 
-    <div class="apps">
+</div>
 
-        <!-- HAPP -->
+<section class="donation">
 
-        <div class="app-block">
+    <h2 class="donation-title" id="donation-title">
+        Поддержать WT419 VPN
+    </h2>
 
-            <div class="app-header">
+    <p class="donation-text" id="donation-text">
+        Если вам нравится проект, вы можете поддержать его криптовалютным донатом.
+    </p>
 
-                <div class="app-name">
-                    Happ
-                </div>
+    <button
+        class="donation-button"
+        id="donation-button"
+        type="button"
+        onclick="toggleDonations()"
+    >
+        Поддержать проект
+    </button>
 
-                <div class="app-type">
-                    VPN Client
-                </div>
+    <div class="donation-addresses" id="donation-addresses">
 
-            </div>
-
-            <div class="buttons">
-
-                <a
-                    class="download"
-                    href="https://play.google.com/store/apps/details?id=com.happproxy&hl=en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Google Play
-                    <small>Android</small>
-                </a>
-
-                <a
-                    class="download"
-                    href="https://apps.apple.com/app/happ-proxy-utility/id6504287215"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    App Store
-                    <small>iPhone & iPad</small>
-                </a>
-
-                <a
-                    class="download"
-                    href="https://github.com/happ-proxy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                    <small>Other platforms</small>
-                </a>
-
+        <div class="wallet">
+            <span class="wallet-name">Polygon</span>
+            <div class="wallet-address" onclick="copyWallet(this)">
+                0x220c57fa3632bb5475ccf659bf540d9a133e29c6
             </div>
         </div>
 
-
-        <!-- INCY -->
-
-        <div class="app-block">
-
-            <div class="app-header">
-
-                <div class="app-name">
-                    Incy
-                </div>
-
-                <div class="app-type">
-                    VPN Client
-                </div>
-
+        <div class="wallet">
+            <span class="wallet-name">Ethereum (ERC20)</span>
+            <div class="wallet-address" onclick="copyWallet(this)">
+                0xa794a2488e456ff226ca1d5cf5878c060bdc9a7b
             </div>
+        </div>
 
-            <div class="buttons">
+        <div class="wallet">
+            <span class="wallet-name">TON</span>
+            <div class="wallet-address" onclick="copyWallet(this)">
+                EQBcFx4Le5tuul6suQYcaVXWQ8RayQjXHENqjE83ZW-WH_Er
+            </div>
+        </div>
 
-                <a
-                    class="download"
-                    href="https://play.google.com/store/apps/details?id=llc.itdev.incy&hl=en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Google Play
-                    <small>Android</small>
-                </a>
-
-                <a
-                    class="download"
-                    href="https://apps.apple.com/app/incy/id6756943388"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    App Store
-                    <small>iPhone & iPad</small>
-                </a>
-
-                <a
-                    class="download"
-                    href="https://github.com/INCY-DEV/incy-platforms"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                    <small>Other platforms</small>
-                </a>
-
+        <div class="wallet">
+            <span class="wallet-name">USDT (TRC20)</span>
+            <div class="wallet-address" onclick="copyWallet(this)">
+                TX2v8ruQFZwELC9oFcjLdRmn8zKPxV8WKF
             </div>
         </div>
 
     </div>
 
+</section>
 
-    <!-- BLOG -->
+<footer>
+    WT419 VPN
+</footer>
 
-    <footer>
-        <a href="https://www.wt419.site/">
-            VPN Blog
-        </a>
-    </footer>
+</main>
 
-</div>
+<script>
+    const translations = {
+        ru: {
+            subtitle: "Бесплатный VPN с быстрым и безопасным подключением",
+            connect: "Подключить через Happ",
+            download: "Скачать Happ",
+            donationTitle: "Поддержать WT419 VPN",
+            donationText: "Если вам нравится проект, вы можете поддержать его криптовалютным донатом.",
+            donationButton: "Поддержать проект"
+        },
+
+        en: {
+            subtitle: "Free VPN with a fast and secure connection",
+            connect: "Connect with Happ",
+            download: "Download Happ",
+            donationTitle: "Support WT419 VPN",
+            donationText: "If you like the project, you can support it with a crypto donation.",
+            donationButton: "Support the Project"
+        }
+    };
+
+    function setLanguage(lang) {
+        const text = translations[lang];
+
+        document.documentElement.lang = lang;
+
+        document.getElementById("subtitle").textContent = text.subtitle;
+        document.getElementById("connect").textContent = text.connect;
+        document.getElementById("download-title").textContent = text.download;
+        document.getElementById("donation-title").textContent = text.donationTitle;
+        document.getElementById("donation-text").textContent = text.donationText;
+        document.getElementById("donation-button").textContent = text.donationButton;
+
+        document.querySelectorAll(".lang-btn").forEach(button => {
+            button.classList.toggle(
+                "active",
+                button.dataset.lang === lang
+            );
+        });
+    }
+
+    function toggleDonations() {
+        const box = document.getElementById("donation-addresses");
+
+        box.style.display =
+            box.style.display === "block"
+                ? "none"
+                : "block";
+    }
+
+    function copyWallet(element) {
+        const text = element.textContent.trim();
+
+        navigator.clipboard.writeText(text);
+
+        const oldText = element.textContent;
+        element.textContent = "Copied!";
+
+        setTimeout(() => {
+            element.textContent = oldText;
+        }, 1000);
+    }
+
+    setLanguage("ru");
+</script>
 
 </body>
 </html>
